@@ -1,4 +1,4 @@
-package com.example.savingym.ui
+package com.example.savingym.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

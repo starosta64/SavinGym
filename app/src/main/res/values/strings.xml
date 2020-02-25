@@ -4,5 +4,7 @@
     <string name="home">Home</string>
     <string name="sign_up">Sign Up</string>
     <string name="skip">skip</string>
+    <string name="back">back</string>
     <string name="build_muscle">Build muscle</string>
+    <string name="ivanov_mail_com">Ivanov@mail.com</string>
 </resources>

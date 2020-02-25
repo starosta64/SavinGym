@@ -1,4 +1,4 @@
-package com.example.savingym.ui.launch
+package com.example.savingym.ui.launch.splash
 
 import android.content.Context
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.savingym.R
+import com.example.savingym.ui.launch.auth.LoginFragment
 import kotlinx.android.synthetic.main.fragment_last_step.*
 
 class LastStepFragment : Fragment() {
@@ -41,10 +42,14 @@ class LastStepFragment : Fragment() {
                 button4.background = resources.getDrawable(R.drawable.step_y)
                 Handler().postDelayed({
                     requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, LoginFragment())
+                        .replace(R.id.container,
+                            LoginFragment()
+                        )
                         .addToBackStack(null)
                         .commit()
-                }, TRANSACTION_FRAGMENT)
+                },
+                    TRANSACTION_FRAGMENT
+                )
             }
         }
     }

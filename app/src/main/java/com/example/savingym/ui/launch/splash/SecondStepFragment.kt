@@ -1,4 +1,4 @@
-package com.example.savingym.ui.launch
+package com.example.savingym.ui.launch.splash
 
 import android.content.Context
 import android.os.Bundle
@@ -67,10 +67,14 @@ class SecondStepFragment : Fragment() {
                 next_btn.background = resources.getDrawable(R.drawable.step_y)
                 Handler().postDelayed({
                     requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, ThirdStepFragment())
+                        .replace(R.id.container,
+                            ThirdStepFragment()
+                        )
                         .addToBackStack(null)
                         .commit()
-                }, TRANSACTION_FRAGMENT)
+                },
+                    TRANSACTION_FRAGMENT
+                )
             }
     }
 }
