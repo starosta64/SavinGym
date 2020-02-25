@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SavinGym</string>
+
+    <string name="home">Home</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="skip">skip</string>
+    <string name="build_muscle">Build muscle</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--SplashActivity-->
+    <color name="color_splash_blue">#2E70BE</color>
+    <color name="color_splash_white">#ffffff</color>
+
+    <!--LoginActivity-->
+    <color name="color_login_blue">#6E9CD2</color>
+
+
+
+    <color name="color_button_yellow">#E3DFBC</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+</resources>
