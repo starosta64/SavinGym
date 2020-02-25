@@ -2,6 +2,8 @@
 <resources>
     <dimen name="logo_dimen_size">96dp</dimen>
     <dimen name="logo_dimen_margin">104dp</dimen>
+    <dimen name="m_dimen_margin">10dp</dimen>
+    <dimen name="b_dimen_margin">30dp</dimen>
     <dimen name="q_tv_size">24sp</dimen>
     <dimen name="q_text_size_title">18sp</dimen>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.savingym.ui.launch
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -14,6 +15,8 @@ class ThirdStepFragment : Fragment() {
 
     companion object {
         private const val TRANSACTION_FRAGMENT: Long = 800
+        private const val USER_GENDER = "user_gender"
+        private const val APP_PREFERENCES = "mysettings"
     }
 
     override fun onCreateView(
@@ -26,7 +29,14 @@ class ThirdStepFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val pref = this.requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+        val gender:String? = pref.getString(USER_GENDER, "female")
+        if(gender!= null){
+            container_third.background = resources.getDrawable(R.drawable.atlet_female)
+        }
+        else{
+            container_third.background = resources.getDrawable(R.drawable.atlet2)
+        }
 
         button.setOnClickListener {
             button.background = resources.getDrawable(R.drawable.step_y)
