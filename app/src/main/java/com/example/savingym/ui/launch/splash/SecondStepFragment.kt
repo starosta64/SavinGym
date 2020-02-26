@@ -31,6 +31,8 @@ class SecondStepFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val gender = this.requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
         val editor = gender.edit()
+        next_btn.isClickable = false
+
         Female.setOnClickListener {
             isFemale = !isFemale
             if(isFemale){
@@ -39,10 +41,12 @@ class SecondStepFragment : Fragment() {
                 editor.putString(USER_GENDER, "female")
                 editor.apply()
                 isMale = false
+                next_btn.isClickable = true
             }
             else {
                 isFemale = false
                 Female.background = resources.getDrawable(R.drawable.step)
+                next_btn.isClickable = true
             }
 
         }
@@ -54,10 +58,12 @@ class SecondStepFragment : Fragment() {
                 editor.remove(USER_GENDER)
                 editor.apply()
                 isFemale = false
+                next_btn.isClickable = true
             }
             else{
                 isFemale = false
                 Male.background = resources.getDrawable(R.drawable.step)
+                next_btn.isClickable = true
             }
         }
 

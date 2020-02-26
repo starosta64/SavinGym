@@ -13,16 +13,17 @@ import retrofit2.http.Query
 
 interface AuthApi {
 
-    @POST("signup")
-    fun authUser(@Query("", encoded = false) username:String,
-                 @Query("", encoded = false)password:String,
-                 @Query("", encoded = false)email:String,
-                 @Query("", encoded = false) h:String,
-                 @Query("", encoded = false) w:String):Single<AuthResponse>
+    @POST("/signup")
+    fun authUser(@Query("username") username:String,
+                 @Query("password")password:String,
+                 @Query("email")email:String,
+                 @Query("height") h:String,
+                 @Query("weight") w:String):Single<AuthResponse>
 
-    @POST("signout")
-    fun logoutUser(@Query("", encoded = false) logoutRequest: LogoutRequest):Completable
+    @POST("/signout")
+    fun logoutUser(@Query("username") username:String):Completable
 
-    @POST("signin")
-    fun loginUser(@Query("", encoded = false) loginRequest: LoginRequest):Completable
+    @POST("/signin")
+    fun loginUser(@Query("username") username:String,
+                  @Query("password")password:String):Completable
 }

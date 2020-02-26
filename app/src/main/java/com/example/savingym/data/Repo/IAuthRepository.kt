@@ -11,7 +11,7 @@ interface IAuthRepository {
 
     fun authUser(username:String, password:String, email:String, h:String, w:String): Single<AuthResponse>
 
-    fun logoutUser(logoutRequest: LogoutRequest): Completable
+    fun logoutUser(username:String): Completable
 
-    fun loginUser(loginRequest:LoginRequest):Completable//json response
+    fun loginUser(username:String, password:String):Completable//json response
 }

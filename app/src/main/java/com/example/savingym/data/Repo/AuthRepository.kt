@@ -18,11 +18,11 @@ class AuthRepository :IAuthRepository{
         service.authUser(username, password, email, h, w)
             .subscribeOn(Schedulers.io())
 
-    override fun logoutUser(logoutRequest: LogoutRequest): Completable =
-        service.logoutUser(logoutRequest)
+    override fun logoutUser(username:String): Completable =
+        service.logoutUser(username)
             .subscribeOn(Schedulers.io())
 
-    override fun loginUser(loginRequest: LoginRequest): Completable =
-        service.loginUser(loginRequest)
+    override fun loginUser(username:String, password:String): Completable =
+        service.loginUser(username, password)
             .subscribeOn(Schedulers.io())
 }

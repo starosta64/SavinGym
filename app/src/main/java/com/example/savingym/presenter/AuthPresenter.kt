@@ -12,7 +12,7 @@ import io.reactivex.disposables.CompositeDisposable
 @InjectViewState
 class AuthPresenter : MvpPresenter<IAuthView>() {
 
-    val compose:CompositeDisposable = CompositeDisposable()
+    private val compose:CompositeDisposable = CompositeDisposable()
 
     private var authRepository: AuthRepository = AuthRepository()
 
@@ -35,7 +35,6 @@ class AuthPresenter : MvpPresenter<IAuthView>() {
 
     fun authUser(username: String, email: String, password: String, h: String, w: String) {
 
-        val authRequest = AuthRequest(username, password, email, h, w)
         compose.add(authRepository.authUser(username, password, email, h, w)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -46,4 +45,8 @@ class AuthPresenter : MvpPresenter<IAuthView>() {
         )
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        compose.dispose()
+    }
 }

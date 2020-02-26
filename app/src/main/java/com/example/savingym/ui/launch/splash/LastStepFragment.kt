@@ -34,8 +34,8 @@ class LastStepFragment : Fragment() {
 
 
         button4.setOnClickListener {
-            val w: String? = pref.getString(USER_WEIGHT, et_weight.text.toString())
-            val h: String? = pref.getString(USER_HEIGHT, et_height.text.toString())
+            editor.putString(USER_WEIGHT, et_weight.text.toString())
+            editor.putString(USER_HEIGHT, et_height.text.toString())
             editor.apply()
 
             button4.setOnClickListener {

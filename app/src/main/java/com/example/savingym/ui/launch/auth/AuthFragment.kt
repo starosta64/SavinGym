@@ -65,8 +65,8 @@ class AuthFragment :MvpAppCompatFragment(), IAuthView {
         }
         btn_sign_up.setOnClickListener {
             val pref = this.requireActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
-            val w: String? = pref.getString(USER_WEIGHT, "")
-            val h: String? = pref.getString(USER_HEIGHT, "")
+            val w: String? = pref.getString(USER_WEIGHT, "78")
+            val h: String? = pref.getString(USER_HEIGHT, "178")
             when(presenter.isUserValid(editText.text) &&presenter.isEmailValid(et_email.text) &&  presenter.isPasswordValid(editText2.text)
                     && presenter.isPasswordEquals(editText2.text, editText3.text)){
                 false -> Toast.makeText(context, "Incorrect username or password.", Toast.LENGTH_LONG).show()
@@ -87,6 +87,6 @@ class AuthFragment :MvpAppCompatFragment(), IAuthView {
             .beginTransaction()
             .replace(R.id.container, LoginFragment())
             .commit()
-        Toast.makeText(requireContext(), answer, Toast.LENGTH_LONG ).show()
+        //Toast.makeText(requireContext(), answer, Toast.LENGTH_LONG ).show()
     }
 }
