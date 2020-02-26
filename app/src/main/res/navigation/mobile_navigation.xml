@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/mobile_navigation">
+
+    <fragment android:id="@+id/main_fragment"
+        android:name="com.example.savingym.ui.main.MainFragment"
+        android:label="MainFragment"/>
+    <fragment android:id="@+id/lesson_fragment"
+        android:name="com.example.savingym.ui.main.LessonFragment"
+        android:label="LessonFragment"/>
+    <fragment android:id="@+id/report_fragment"
+        android:name="com.example.savingym.ui.main.ReportFragment"
+        android:label="ReportFragment"/>
+    <fragment android:id="@+id/profile_fragment"
+        android:name="com.example.savingym.ui.main.ProfileFragment"
+        android:label="ProfileFragment"/>
+</navigation>
