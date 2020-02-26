@@ -2,6 +2,8 @@
     <string name="app_name">SavinGym</string>
 
     <string name="home">Home</string>
+    <string name="home_gym">Home Gym</string>
+    <string name="lesson">Lessons</string>
     <string name="sign_up">Sign Up</string>
     <string name="skip">skip</string>
     <string name="back">back</string>

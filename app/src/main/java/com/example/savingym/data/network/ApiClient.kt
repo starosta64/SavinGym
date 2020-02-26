@@ -21,12 +21,18 @@ class ApiClient {
     }
 
     val authApi: AuthApi
+    val mainApi: MainApi
 
     init {
         authApi = createRetrofit(
             "http://gym.areas.su/",
             initOkHttpClient()
         ).create(AuthApi::class.java)
+
+        mainApi = createRetrofit(
+                "http://gym.areas.su/",
+        initOkHttpClient()
+        ).create(MainApi::class.java)
     }
 
     //уровень подключения

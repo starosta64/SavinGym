@@ -9,6 +9,8 @@
     <!--LoginActivity-->
     <color name="color_login_blue">#6E9CD2</color>
 
+    <color name="color_gradient">#BECAD9</color>
+
 
 
     <color name="color_button_yellow">#E3DFBC</color>
