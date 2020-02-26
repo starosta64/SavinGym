@@ -13,6 +13,7 @@ import com.example.savingym.presenter.main.MainPresenter
 import com.example.savingym.view.IMainView
 import kotlinx.android.synthetic.main.fragment_main.*
 
+//start version
 class MainFragment :MvpAppCompatFragment(), IMainView {
 
     companion object {
@@ -42,6 +43,7 @@ class MainFragment :MvpAppCompatFragment(), IMainView {
             val username = pref?.getString(USER_NAME, "")
             presenter.logoutUser(username?:"")
         }
+
     }
 
     override fun logout() {
