@@ -1,9 +1,6 @@
 package com.example.savingym.data.Repo
 
-import com.example.savingym.data.Entity.AuthRequest
-import com.example.savingym.data.Entity.AuthResponse
-import com.example.savingym.data.Entity.LoginRequest
-import com.example.savingym.data.Entity.LogoutRequest
+import com.example.savingym.data.Entity.*
 import io.reactivex.Completable
 import io.reactivex.Single
 
@@ -13,5 +10,5 @@ interface IAuthRepository {
 
     fun logoutUser(username:String): Completable
 
-    fun loginUser(username:String, password:String):Completable//json response
+    fun loginUser(username:String, password:String):Single<LoginResponse>
 }

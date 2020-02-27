@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_login.*
 class LoginFragment : MvpAppCompatFragment(), ILoginView{
 
     companion object {
+        private const val TOKEN = "token"
         private const val USER_NAME = "user_name"
         private const val APP_PREFERENCES = "mysettings"
     }
@@ -73,8 +74,14 @@ class LoginFragment : MvpAppCompatFragment(), ILoginView{
         }
     }
 
-    override fun loginUser() {
+    override fun loginUser(token:String) {
+        val editor = pref?.edit()
+        editor?.putString(TOKEN, token)
+        editor?.apply()
         startActivity(Intent(requireContext(), MainActivity::class.java))
     }
 
+    override fun activeUser() {
+        startActivity(Intent(requireContext(), MainActivity::class.java))
+    }
 }

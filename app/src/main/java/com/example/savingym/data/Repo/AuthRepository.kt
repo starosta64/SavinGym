@@ -1,9 +1,6 @@
 package com.example.savingym.data.Repo
 
-import com.example.savingym.data.Entity.AuthRequest
-import com.example.savingym.data.Entity.AuthResponse
-import com.example.savingym.data.Entity.LoginRequest
-import com.example.savingym.data.Entity.LogoutRequest
+import com.example.savingym.data.Entity.*
 import com.example.savingym.data.network.ApiClient
 import com.example.savingym.data.network.AuthApi
 import io.reactivex.Completable
@@ -22,7 +19,7 @@ class AuthRepository :IAuthRepository{
         service.logoutUser(username)
             .subscribeOn(Schedulers.io())
 
-    override fun loginUser(username:String, password:String): Completable =
+    override fun loginUser(username:String, password:String): Single<LoginResponse> =
         service.loginUser(username, password)
             .subscribeOn(Schedulers.io())
 }
