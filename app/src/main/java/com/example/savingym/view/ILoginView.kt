@@ -4,5 +4,6 @@ import com.arellomobile.mvp.MvpView
 import com.example.savingym.data.Entity.AuthRequest
 
 interface ILoginView : MvpView {
-    fun loginUser()
+    fun loginUser(token:String)
+    fun activeUser()
 }

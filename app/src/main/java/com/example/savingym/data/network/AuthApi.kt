@@ -1,9 +1,6 @@
 package com.example.savingym.data.network
 
-import com.example.savingym.data.Entity.AuthRequest
-import com.example.savingym.data.Entity.AuthResponse
-import com.example.savingym.data.Entity.LoginRequest
-import com.example.savingym.data.Entity.LogoutRequest
+import com.example.savingym.data.Entity.*
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -25,5 +22,5 @@ interface AuthApi {
 
     @POST("/signin")
     fun loginUser(@Query("username") username:String,
-                  @Query("password")password:String):Completable
+                  @Query("password")password:String):Single<LoginResponse>
 }

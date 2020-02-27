@@ -29,7 +29,12 @@ class LoginPresenter :MvpPresenter<ILoginView>(){
         compose.add(authRepository.loginUser(username, password)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                viewState.loginUser()
+                if(it.notice?.token!= null){
+                    viewState.loginUser(it.notice?.token!!)
+                }
+                else {
+                    viewState.activeUser()
+                }
             },{
                 Log.e("Auth", it.localizedMessage)
             }))
