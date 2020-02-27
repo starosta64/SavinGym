@@ -13,6 +13,7 @@ import com.example.savingym.presenter.main.MainPresenter
 import com.example.savingym.view.IMainView
 import kotlinx.android.synthetic.main.fragment_main.*
 
+//session5
 class MainFragment :MvpAppCompatFragment(), IMainView {
 
     companion object {
