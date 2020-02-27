@@ -1,5 +1,6 @@
 package com.example.savingym.data.network
 
+import com.example.savingym.data.Entity.Lesson
 import com.example.savingym.data.Entity.Profile
 import io.reactivex.Completable
 import io.reactivex.Single
@@ -15,7 +16,7 @@ interface MainApi {
     ): Single<List<Profile>>
 
     @GET("/lessons")
-    fun getLessons(): Completable//json
+    fun getLessons(): Single<List<Lesson>>
 
     @PUT("/editeprofile")
     fun editProfile(

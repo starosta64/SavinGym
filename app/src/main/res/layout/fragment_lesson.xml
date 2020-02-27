@@ -43,7 +43,11 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout_lesson"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            app:tabBackground="@drawable/tab_layout_selector"
+            app:tabSelectedTextColor="@color/color_splash_white"
+            app:tabTextColor="@color/color_login_blue"
+            />
     </androidx.viewpager.widget.ViewPager>
 
 

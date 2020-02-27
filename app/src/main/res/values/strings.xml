@@ -2,6 +2,12 @@
     <string name="app_name">SavinGym</string>
 
     <string name="home">Home</string>
+    <string name="bio">Biometric</string>
+    <string name="gen">Gender</string>
+    <string name="message">Please, Input Your Biometric Data</string>
+    <string name="message_gen">Please, Choose Your Gender </string>
+    <string name="positive">OK</string>
+    <string name="negative">Cancel</string>
     <string name="home_gym">Home Gym</string>
     <string name="lesson">Lessons</string>
     <string name="sign_up">Sign Up</string>

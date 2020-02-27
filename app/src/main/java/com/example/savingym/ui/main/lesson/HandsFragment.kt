@@ -1,6 +1,5 @@
 package com.example.savingym.ui.main.lesson
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,8 @@ import com.example.savingym.data.Entity.Exercises
 import com.example.savingym.ui.main.adapter.PlanAdapter
 import kotlinx.android.synthetic.main.fragment_hands.*
 
-class HandsFragment : MvpAppCompatFragment(){
+class HandsFragment() : MvpAppCompatFragment(){
+
 
     lateinit var adapter: PlanAdapter
     private var item:MutableList<Exercises> = mutableListOf()

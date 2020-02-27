@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.example.savingym.R
+import com.example.savingym.data.Entity.Lesson
 import com.example.savingym.presenter.main.LessonPresenter
 import com.example.savingym.ui.main.lesson.HandsFragment
 import com.example.savingym.ui.main.lesson.LegsFragment
@@ -46,24 +47,43 @@ class LessonFragment :MvpAppCompatFragment(), ILessonView{
         viewPager.adapter = adapter
     }
 
-    override fun getLessons() {
-
+    override fun getLessons(lessons:List<Lesson>) {
+        adapter.setLesson(lessons)
     }
 
     class LessonAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+
+        private var lessons:List<Lesson>? = listOf()
+        private var hand:Lesson? = null
+        private var torso:Lesson? = null
+        private var spine:Lesson? = null
+        private var leg:Lesson? = null
+
+        fun setLesson(lessons:List<Lesson>){
+            this.lessons = lessons
+        }
+
+        private fun setCategory(){
+            lessons?.map {
+                when(it.category){
+                    "torso" -> torso = it
+                    "spine" -> spine = it
+                    "legs" -> leg = it
+                    "hands" -> hand = it
+                }
+            }
+        }
 
         override fun getCount(): Int  = 4
 
         override fun getItem(i: Int): Fragment {
             var fragment:Fragment? = null
+
             when(i){
                 0-> fragment = HandsFragment()
                 1-> fragment = SpineFragment()
                 2-> fragment = TorsoFragment()
                 3-> fragment = LegsFragment()
-            }
-            fragment?.arguments = Bundle().apply {
-                putInt("object", i + 1)
             }
             return fragment!!
         }

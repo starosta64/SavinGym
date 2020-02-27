@@ -1,5 +1,6 @@
 package com.example.savingym.data.Repo
 
+import com.example.savingym.data.Entity.Lesson
 import com.example.savingym.data.Entity.Profile
 import com.example.savingym.data.network.ApiClient
 import com.example.savingym.data.network.MainApi
@@ -15,7 +16,7 @@ class MainRepository :IMainRepository{
             .subscribeOn(Schedulers.io())
     }
 
-    override fun getLessons(): Completable {
+    override fun getLessons(): Single<List<Lesson>> {
         return service.getLessons()
             .subscribeOn(Schedulers.io())
 

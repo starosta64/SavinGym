@@ -20,9 +20,9 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:minHeight="30dp"
             app:title="@string/home_gym"
-            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginStart="110dp"
             app:expandedTitleMarginBottom="34dp"
-            app:expandedTitleMarginEnd="84dp"
+            app:expandedTitleMarginEnd="64dp"
             >
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"

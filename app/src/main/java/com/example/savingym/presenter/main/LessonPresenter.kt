@@ -21,7 +21,7 @@ class LessonPresenter : MvpPresenter<ILessonView>(){
             mainRepository.getLessons()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    viewState.getLessons()
+                    viewState.getLessons(it)
                 },{
                     Log.e("Main", it.localizedMessage)
                 })
